@@ -12,14 +12,37 @@ import javax.sql.DataSource;
 import vo.Student;
 
 public class StudentDAO {
-    public static Connection getConnection(){  
+ 	private String dburl = "jdbc:mysql://localhost:3306/userdb";
+        private String dbuname = "root";
+    	private String dbpassword = "satish";
+    	private String dbdriver = "com.mysql.cj.jdbc.Driver";
+        public void loadDriver(String dbDriver)
+        {
+  	try {
+ 		Class.forName(dbDriver);
+ 	} catch (ClassNotFoundException e) {
+ 	// TODO Auto-generated catch block
+ 		e.printStackTrace();
+ 	}
+ 	}
+ 	public Connection getConnection() {
+ 		Connection con = null;
+ 		try {
+ 			con = DriverManager.getConnection(dburl, dbuname, dbpassword);
+ 		} catch (SQLException e) {
+ 		// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		}
+ 		return con;
+    	}
+   /* public static Connection getConnection(){  
         Connection con=null;  
         try{  
             Class.forName("com.mysql.cj.jdbc.Driver");  
             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb","root","root");  
         }catch(Exception e){System.out.println(e);}  
         return con;  
-    }
+    } */
 	
 	/* public static Connection getConnection() throws Exception {
 		Connection conn=null;
