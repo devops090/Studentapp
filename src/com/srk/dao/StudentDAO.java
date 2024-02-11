@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 import vo.Student;
 
 public class StudentDAO {
- 	private String dburl = "jdbc:mysql://localhost:3306/userdb";
+ 	/*private String dburl = "jdbc:mysql://localhost:3306/userdb";
         private String dbuname = "root";
     	private String dbpassword = "satish";
     	private String dbdriver = "com.mysql.cj.jdbc.Driver";
@@ -34,7 +34,7 @@ public class StudentDAO {
  			e.printStackTrace();
  		}
  		return con;
-    	}
+    	}*/
    /* public static Connection getConnection(){  
         Connection con=null;  
         try{  
@@ -44,14 +44,14 @@ public class StudentDAO {
         return con;  
     } */
 	
-	/* public static Connection getConnection() throws Exception {
+	 public static Connection getConnection() throws Exception {
 		Connection conn=null;
 		Context initContext = new InitialContext();
 		Context envContext = (Context) initContext.lookup("java:comp/env");
 		DataSource ds = (DataSource) envContext.lookup("jdbc/TestDB");
 		conn = ds.getConnection();
 		return conn; 
-	} */
+	} 
 	public static void main(String[] args) {
 		
 	}
